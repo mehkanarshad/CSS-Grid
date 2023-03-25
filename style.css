@@ -1,0 +1,212 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html {
+  font-family: "Dosis", sans-serif;
+}
+.outer-grid {
+  display: grid;
+  height: 100vh;
+  width: 100%;
+  grid-template-rows: 30px 1fr;
+  grid-template-columns: 90px 1fr;
+  grid-template-areas:
+    "header header"
+    "inner-grid inner-grid";
+}
+
+p {
+  font-size: 1.5em;
+  line-height: 3rem;
+  word-spacing: 0.2rem;
+}
+
+/* ............... HEADER...........  */
+header {
+  grid-area: header;
+  width: 100%;
+  display: flex;
+  align-items: space-between;
+  justify-content: space-between;
+  gap: 2rem;
+  position: relative;
+  background-color: rgb(11, 72, 11);
+  color: white;
+  position: fixed;
+  z-index: 99;
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+li a {
+  color: rgb(11, 72, 11);
+  text-decoration: none;
+  list-style-type: none;
+  padding-bottom: 2rem;
+  padding-top: 0.5rem;
+}
+
+.container {
+  padding: 2.5rem 4.5rem;
+}
+.logo {
+  padding-left: -100rem;
+  margin-left: 0px;
+}
+ul {
+  position: absolute;
+  top: 8.4rem;
+  left: 0px;
+  transition: all 0.4s ease-in-out;
+  list-style-type: none;
+  z-index: 99;
+}
+
+li {
+  color: rgb(11, 72, 11);
+  box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.084);
+  display: flex;
+  flex-direction: column;
+  padding-top: 2rem;
+  background-color: rgb(231, 245, 224);
+  position: fixed;
+  height: 92vh;
+}
+label .fa-solid {
+  display: none;
+}
+.right {
+  display: flex;
+  justify-content: space-between;
+  align-content: space-between;
+  gap: 2rem;
+}
+.left {
+  display: flex;
+  justify-content: space-between;
+  align-content: space-between;
+  gap: 2rem;
+}
+i {
+  text-align: center;
+}
+/* ................. inner grid ....................  */
+.inner-grid {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  grid-template-rows: 1fr 80px;
+  grid-template-areas:
+    "main aside"
+    "footer footer";
+  grid-area: inner-grid;
+  margin-top: 5rem;
+}
+main {
+  grid-area: main;
+  background-color: rgb(248, 247, 247);
+  margin-left: 3rem;
+}
+aside {
+  grid-area: aside;
+  background-color: rgb(231, 245, 224);
+}
+footer {
+  grid-area: footer;
+  box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.084);
+  background-color: rgb(11, 72, 11);
+}
+/* .............................. image .......................  */
+.callage img {
+  margin: 3rem;
+  width: 80%;
+  border-radius: 15px;
+  box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.409);
+}
+.callage {
+  display: grid;
+  grid-template-columns: 1fr 100px 1fr 100px 1fr 100px;
+  grid-template-rows: 1fr 1fr;
+  align-items: end;
+}
+.callage-1 {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  transform: rotate(-10deg);
+}
+.callage-2 {
+  grid-column-start: 3;
+  grid-column-end: 5;
+  z-index: 0;
+  box-shadow: 1px 1px 30px rgba(0, 0, 0, 0.79);
+  /* transform: rotate(-30deg); */
+}
+.callage-3 {
+  grid-column-start: 5;
+  grid-column-end: 7;
+  transform: rotate(10deg);
+}
+.callage * {
+  grid-row-start: 1;
+  grid-row-end: 3;
+}
+/* .................................. aside ..........................  */
+aside img {
+  width: 100%;
+  margin: 1.5rem;
+  border-radius: 500rem;
+}
+.home {
+  width: 100%;
+  padding: 2rem 2rem 0rem 2rem;
+
+  margin-bottom: 1rem;
+  flex-direction: column;
+  display: flex;
+  align-items: space-between;
+}
+.home:hover {
+  background-color: rgb(207, 231, 197);
+}
+@media (max-width: 768px) {
+  #check:checked ~ .nav-items ul {
+    left: -120px;
+  }
+  label .fa-solid {
+    display: block;
+  }
+  .inner-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 200px 50px;
+    grid-template-areas:
+      "main"
+      "aside"
+      "footer";
+  }
+  header .left i:hover {
+    opacity: 0.6;
+    cursor: pointer;
+  }
+  .container {
+    padding: 2.5rem;
+  }
+  main {
+    margin-left: 0rem;
+  }
+  img {
+    width: 20%;
+  }
+  header .left .fa-ellipsis-vertical:hover {
+    opacity: 1;
+    cursor: pointer;
+    background-color: rgba(17, 58, 17, 0.676);
+    background-size: 200%;
+    border-radius: 100%;
+  }
+  header .left .fa-ellipsis-vertical {
+    padding: 0.3rem 1.4rem;
+  }
+}
